@@ -120,3 +120,62 @@ public class Kom_Aufgabe {
 		}
 	}
 }
+
+	public static void main(String[] args) {
+		Scanner eingabe = new Scanner(System.in);
+		int dezZahl = eingabe.nextInt();
+		String binär = "";
+		String ergebnisZahl = "";
+		int counter = 0;
+		String zeichnen = "";
+
+
+		while (dezZahl != 0) {
+			if (dezZahl % 2 == 0) {
+				binär = "0" + binär;
+			} else {
+				binär = "1" + binär;
+			}
+
+			dezZahl = dezZahl / 2;
+			counter++;
+			if (counter == 4) {
+				binär = " " + binär;
+				counter = 0;
+			}
+		}
+		
+		String[] split = binär.split(" ");
+
+		for (int x = 0; x < split.length; x++) {
+			zeichnen = split[x];
+			if (zeichnen.equals("")) {
+				continue;
+			}
+			
+			int dezimalZahl = 0;
+			int restWert = 0;
+			int anzahlVerschiebung = 0;
+			int numberInt = Integer.parseInt(zeichnen);
+
+			while (numberInt != 0) {
+				restWert = numberInt % 10;
+				dezimalZahl = dezimalZahl + (int) (restWert * (Math.pow(2, anzahlVerschiebung)));
+				numberInt = numberInt / 10;
+				anzahlVerschiebung = anzahlVerschiebung + 1;
+			}
+			
+			
+
+			if (dezimalZahl >= 10) {
+				char c = (char) (((int)('A') -10)+ dezimalZahl);
+				ergebnisZahl += c;	
+			} else {
+				ergebnisZahl += dezimalZahl;
+			}
+
+		}
+
+		System.out.println(ergebnisZahl);
+	}
+
