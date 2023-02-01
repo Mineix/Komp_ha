@@ -11,20 +11,28 @@ public class Kom_Aufgabe {
 		out.println("|"+msg+"|" );
 		out.println("╰─"+"━".repeat(width) + "─╯" );
 	}
+	
+	/// Empty methods are bad
 	static void wandleBinInDez() {
 
 	}
 
 	public static void main(String[] args) {
-
+	
 		wandleBinInDez();
 		String bin = "";
+		/// Why is i = 364
+		/// Bad var name dezZahl
 		int dezZahl, i = 364, count = 0;
+		/// ITrechner => CamelCase prinzipe!!!!
 		char menu, dezimal, ITrechner = 0;
 		boolean open, start = true;
 
+		/// Context variables should be declared in there context
 		int anzahlVerschiebung = 0;
+		/// Duplicated variables with dezZahl see l. 26
 		int dezZahl1 = 0;
+		/// Context variables should be declared in there context
 		int restWert = 0;
 
 		String hex = Integer.toHexString(i);
@@ -39,9 +47,10 @@ public class Kom_Aufgabe {
 					+ " \n |Bin --> Dez|Bitte B Eigeben,|" 
 					+ " \n |Dez --> Hex|Bitte H Eigeben.|"
 					+ " \n ╰─━━━━━━━━━━━━━━━━━━━━━━━━━━─╯");
-			ITrechner = Kon.readChar();}
+			ITrechner = Kon.readChar();} /// Format error <--
 			switch (ITrechner) {
 			case 'D': {
+				/// Exclude long prcedures in his own methods
 				System.out.println(" ╭─━━━━━━━━━━━━━━━━━━━━━━━─╮");
 				System.out.println(" |Bitte DezZahl Eingeben:  |");
 				System.out.println(" ╰─━━━━━━━━━━━━━━━━━━━━━━━─╯");
@@ -68,6 +77,8 @@ public class Kom_Aufgabe {
 				break;
 			}
 			case 'B': {
+				/// Exclude long prcedures in his own methods
+				/// Declare Scanner once at the top of the method
 				Scanner eingabe = new Scanner(System.in);
 				System.out.println(" ╭─━━━━━━━━━━━━━━━━━━━━━━━─╮");
 				System.out.println(" |Bitte Binzahl eingeben!  |");
@@ -80,11 +91,13 @@ public class Kom_Aufgabe {
 					anzahlVerschiebung = anzahlVerschiebung + 1;
 				}
 				if (dezZahl1 > 10) {
+					/// Use generateBox method!
 					System.out.println(" ╭─━━━━━━━━━━━━━━━━━━━━━━━─╮");
 					System.out.println(" |" + "Ihre DezZahl lautet: " + dezZahl1 + " " + " |");
 					System.out.println(" ╰─━━━━━━━━━━━━━━━━━━━━━━━─╯");
 
 				} else {
+					/// Use generateBox method!
 					System.out.println(" ╭─━━━━━━━━━━━━━━━━━━━━━━━─╮");
 					System.out.println(" |" + "Ihre DezZahl lautet: " + " " + dezZahl1 + " " + " |");
 					System.out.println(" ╰─━━━━━━━━━━━━━━━━━━━━━━━─╯");
