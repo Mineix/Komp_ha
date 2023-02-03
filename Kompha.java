@@ -173,4 +173,9 @@ public class Kom_Aufgabe {
 			}
 		}
 	}
+	
+	//public static void test(String... strings) {
+		// test("Wasd", "wasd", "wasd");
+		
+	//}
 }
